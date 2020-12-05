@@ -1,4 +1,4 @@
 module.exports = {
   outputDir: 'docs',
-  // publicPath: '/v3/',
+  publicPath: '/lan-vue-v3/',
 }
