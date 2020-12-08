@@ -10,6 +10,7 @@
   },
   "rules": {
     "indent": [true, "spaces", 2],
+    "semicolon": [false, "never"],
     "interface-name": false,
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
