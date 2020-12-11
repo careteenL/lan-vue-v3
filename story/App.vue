@@ -1,11 +1,12 @@
 <template>
-  <AppNavigator defaultpath="normal/button">
+  <AppNavigator defaultpath="normal/button" ref="navigator">
     <article class="app-home">
       <section 
         class="app-header" 
         :style="{
           height: `${HomeConfig.headSize}px`,
         }"
+        @click="goHome"
       >
         LanVue-V3
       </section>
@@ -55,6 +56,12 @@ export default defineComponent({
       HomeConfig,
     }
   },
+  methods: {
+    goHome() {
+      console.log(this.$refs);
+      
+    }
+  },
 })
 </script>
 
@@ -76,6 +83,7 @@ html, body {
     box-sizing: border-box;
     border-bottom: 1px solid #f2f2f2;
     background: #fff;
+    cursor: pointer;
   }
   .app-menu {
     position: fixed;

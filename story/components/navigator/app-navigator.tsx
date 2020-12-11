@@ -1,4 +1,4 @@
-import { defineComponent, inject, onBeforeUnmount, provide, reactive } from 'vue'
+import { defineComponent, getCurrentInstance, inject, onBeforeUnmount, provide, reactive } from 'vue'
 
 interface Route {
   path?: string;
@@ -47,6 +47,9 @@ const useAppNavigator = (props: { defaultpath?: string }) => {
     state,
     methods,
   }
+
+  const ctx = getCurrentInstance() as any
+  ctx._refer = refer
 
   window.addEventListener('hashchange', handler.hashChange)
   onBeforeUnmount(() => {
