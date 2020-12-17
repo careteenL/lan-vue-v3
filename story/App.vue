@@ -1,5 +1,5 @@
 <template>
-  <AppNavigator defaultpath="normal/button" ref="navigator">
+  <AppNavigator defaultpath="home" ref="navigator">
     <article class="app-home">
       <section 
         class="app-header" 

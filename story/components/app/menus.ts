@@ -1,6 +1,6 @@
 export interface AppMenu {
   name: string,
-  title: string,
+  title?: string,
   page: string,
   complete?: boolean,
 }
@@ -11,6 +11,12 @@ export interface MenuGroup {
 }
 
 export const MENUS: MenuGroup[] = [
+  {
+    name: '开发指南',
+    children: [
+      { name: '快速上手', page: '/home', complete: false },
+    ],
+  },
   {
     name: '基础',
     children: [
