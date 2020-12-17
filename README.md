@@ -12,10 +12,10 @@ main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import LanVueV3 from '@careteen/lan-vue-v3'
+import LanVueV3 from '@careteen/lan-vue-v3' // +
 
 const app = createApp(App)
-app.use(LanVueV3)
+app.use(LanVueV3) // +
 
 app.mount('#app')
 ```
