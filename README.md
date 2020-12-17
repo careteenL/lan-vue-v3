@@ -20,4 +20,17 @@ app.use(LanVueV3) // +
 app.mount('#app')
 ```
 
-[组件使用文档](https://careteenl.github.io/lan-vue-v3/)
+> [组件使用文档](https://careteenl.github.io/lan-vue-v3/)
+
+## CHANGELOG
+
+## 0.1.0
+
+- 🎸  提供`Button`
+- 🎸  提供`Input`
+
+> [移步更多日志](./CHANGELOG.md)
+
+## Example
+
+- [更多示例](./example)
