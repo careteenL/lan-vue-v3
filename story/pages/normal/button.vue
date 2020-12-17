@@ -23,7 +23,7 @@ export default defineComponent({
   name: 'demo-button',
   data() {
     return {
-      statusList: ['primay', 'success', 'warn', 'error', 'info']
+      statusList: ['primary', 'success', 'warn', 'error', 'info']
     }
   }
 })
