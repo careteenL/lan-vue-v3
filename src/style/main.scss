@@ -1,0 +1,100 @@
+@import "./theme/default";
+
+$dt: map_get($theme-default, '');
+
+@function lanv($key) {
+  @if (map_has_key($globalTheme, $key)) {
+    @return map-get($globalTheme, $key);
+  } @else {
+    @return map-get($dt, $key);
+  }
+}
+
+@mixin generateThemeContent($name, $theme) {
+  $globalTheme: $theme !global;
+  $globalThemeName: $name !global;
+
+  $colorPrimary: lanv(colorPrimary) !global;
+  $colorPrimaryLight: mix(white, $colorPrimary, 85%) !global;
+  $colorSuccess: lanv(colorSuccess) !global;
+  $colorWarn: lanv(colorWarn) !global;
+  $colorError: lanv(colorError) !global;
+  $colorInfo: lanv(colorInfo) !global;
+  $disabled: lanv(disabled) !global;
+  $disabledLight: lanv(disabledLight) !global;
+  $disabledDeep: lanv(disabledDeep) !global;
+  $disabledText: lanv(disabledText) !global;
+  $font: lanv(font) !global;
+  $ibc: lanv(ibc) !global;
+  $ibl: lanv(ibl) !global;
+  $itc: lanv(itc) !global;
+  $itl: lanv(itl) !global;
+  $ihc: lanv(ihc) !global;
+  $ipc: lanv(ipc) !global;
+  $icc: lanv(icc) !global;
+  $transitionFlexible: lanv(transitionFlexible) !global;
+  $transition: lanv(transition) !global;
+  $transition2: lanv(transition2) !global;
+  $shapeFillet: lanv(shapeFillet) !global;
+  $popperRadius: lanv(popperRadius) !global;
+  $boxshadow: lanv(boxshadow) !global;
+  $boxshadowColor: lanv(boxshadowColor) !global;
+
+  @if (str_length($name) > 0) {
+    .theme-#{$name} {
+      @content;
+    }
+  } @else {
+    html {
+      @content;
+    }
+  }
+}
+
+@mixin statusMixin($component) {
+  @each $key in (Primary, Success, Warn, Error, Info) {
+
+    $value: lanv(color#{$key}) !global;
+
+    $name: to-lower-case($key) !global;
+    &.lan-#{$component}-status-#{$name} {
+      @content;
+    }
+  }
+}
+
+@mixin shapeMixin($component) {
+  @each $key in (Fillet, Round, Square) {
+
+    $value: lanv(shape#{$key}) !global;
+    $name: to-lower-case($key) !global;
+
+    &.lan-#{$component}-shape-#{$name} {
+      @content;
+    }
+  }
+}
+
+@mixin sizeMixin($component) {
+  @each $key in (Large, Normal, Mini) {
+
+    $value: lanv(size#{$key}) !global;
+    $name: to-lower-case($key) !global;
+
+    &.lan-#{$component}-size-#{$name} {
+      @content;
+    }
+  }
+}
+
+@mixin public-style {
+  box-sizing: border-box;
+  font-weight: 400;
+  color: $itc;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin transition {
+  transition: all $transition 300ms;
+}

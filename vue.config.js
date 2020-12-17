@@ -20,6 +20,14 @@ module.exports = {
       .delete('prefetch-idnex')
       .delete('preload-index')
     config.resolve.alias
+      .set('src', resolve('src'))
       .set('story', resolve('story'))
-  },  
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "src/style/global-import.scss";`,
+      },
+    },
+  },
 }

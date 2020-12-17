@@ -20,4 +20,10 @@ export const MENUS: MenuGroup[] = [
       { name: 'Layout', title: '布局', page: '/normal/layout', complete: false },
     ],
   },
+  {
+    name: '表单',
+    children: [
+      { name: 'Input', title: '输入框', page: '/form/input', complete: false },
+    ],
+  },
 ]

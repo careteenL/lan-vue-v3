@@ -59,7 +59,6 @@ export default defineComponent({
   methods: {
     goHome() {
       console.log(this.$refs);
-      
     }
   },
 })
@@ -84,6 +83,8 @@ html, body {
     border-bottom: 1px solid #f2f2f2;
     background: #fff;
     cursor: pointer;
+    color: #e43;
+    font-weight: bold;
   }
   .app-menu {
     position: fixed;

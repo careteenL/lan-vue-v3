@@ -76,8 +76,8 @@ export default {
       cursor: pointer;
       transition: all 300ms linear;
       &:hover {
-        background-color: rgba(#42b983, 0.1);
-        color: #42b983;
+        background-color: rgba(#e43, 0.1);
+        color: #e43;
       }
     }
     .app-menu-name {
@@ -95,11 +95,11 @@ export default {
       letter-spacing: 1px;
       font-size: 12px;
       font-weight: 600;
-      color: #42b983;
+      color: #e43;
     }
     .app-menu-active {
       .app-menu-name {
-        color: #42b983;
+        color: #e43;
       }
     }
   }
