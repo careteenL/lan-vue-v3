@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rollup Test</title>
+  <link rel="stylesheet" href="../dist/index.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+  <script src="../dist/index.js"></script>
+  <script>
+    console.log(window['@careteen/lan-vue-v3'])
+    const app = window.Vue.createApp({
+      template: `
+        <h4>Button</h4>
+        <div>
+          <lan-button>Careteen</lan-button>
+        </div>
+        <h4>Input</h4>
+        <div>
+          <lan-input ref="myInput" />
+          <button @click="handleOuterFocus">Outer Focus</button>
+        </div>
+      `,
+      setup() {
+        const inputRef = window['@careteen/lan-vue-v3'].Input.use.ref('myInput')
+        return {
+          handleOuterFocus() {
+            inputRef.value.methods.focus(false)
+          }
+        }
+      }
+    })
+    app.use(window['@careteen/lan-vue-v3'])
+    app.mount('#app')
+  </script>
+</body>
+</html>
